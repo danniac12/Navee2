@@ -6,8 +6,10 @@ using TMPro;
 
 public class Interfaz : MonoBehaviour
 {
-    private static Interfaz interfaz;
-    public TextMeshProUGUI tiempo;
+    public static Interfaz interfaz;
+    public TextMeshProUGUI tiempoText;
+    public float tiempo = 20;
+    public GameObject pregunta;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,14 @@ public class Interfaz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        tiempo -= Time.deltaTime;
+        tiempoText.text = "" + tiempo.ToString("f0");
+
+        if (tiempoText.text == "0".ToString())
+        {
+            tiempo = 0;
+            tiempoText.text = "" + tiempo.ToString("0");
+        }
     }
+ 
 }

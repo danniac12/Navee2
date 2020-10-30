@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Reloj : MonoBehaviour
 {
+    Interfaz interfaz;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +21,15 @@ public class Reloj : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             AddTime();
-
+            collision.gameObject.SetActive(false);
             
         }
     }
 
     void AddTime()
     {
+        interfaz.tiempo = 20;
+        interfaz.pregunta.SetActive(true);
 
     }
 }

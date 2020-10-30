@@ -40,7 +40,7 @@ public class NewGameController : MonoBehaviour
             temp.SetActive(false);
         }
         InvokeRepeating("Asteroid",3,2);
-        InvokeRepeating("TimeRelease",5,8);
+        InvokeRepeating("TimeRelease",6,8);
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class NewGameController : MonoBehaviour
     }
     void Asteroid()
     {
-        targetR.position = new Vector2(Random.Range(-1,6), targetR.position.y);
+        targetR.position = new Vector2(Random.Range(-1,5), targetR.position.y);
         rock[p].SetActive(true);
         rock[p].transform.position = new Vector2(targetR.position.x, targetR.position.y);
         p++;
@@ -62,7 +62,7 @@ public class NewGameController : MonoBehaviour
     void TimeRelease()
     {
         {
-            targetC.position = new Vector2(Random.Range(-1, 6), targetC.position.y);
+            targetC.position = new Vector2(Random.Range(-1, 5), targetC.position.y);
             clock[p].SetActive(true);
             clock[p].transform.position = new Vector2(targetC.position.x, targetC.position.y);
             p++;
