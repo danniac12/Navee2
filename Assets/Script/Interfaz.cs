@@ -6,7 +6,7 @@ using TMPro;
 
 public class Interfaz : MonoBehaviour
 {
-    public static Interfaz interfaz;
+    
     public TextMeshProUGUI tiempoText;
     public float tiempo = 20;
     public GameObject pregunta;

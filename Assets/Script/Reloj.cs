@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Reloj : MonoBehaviour
 {
-    Interfaz interfaz;
+    public Interfaz interfaz;
+    public Transform safeBox;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +29,9 @@ public class Reloj : MonoBehaviour
 
     void AddTime()
     {
-        interfaz.tiempo = 20;
+     
         interfaz.pregunta.SetActive(true);
-
+        gameObject.transform.position = new Vector2(safeBox.position.x, safeBox.position.y);
+        gameObject.SetActive(false);
     }
 }
